@@ -1,64 +1,121 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula02 - menu hamburguer</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aula02 - menu hamburguer</title>
+        <link rel="stylesheet" href="rainbow.css">
 
-    <style>
-        .navbar {
-            background-color: black;
-        }
-        .logo {
-            color: white;
-        }
+        <style>
+            .navbar {
+                background-color: black;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px;
+                
+            }
+            .logo {
+                color: white;
+                font-size: 20px;
+                font-weight: bold;
+            }
 
-        /*Estilo de lista de links*/
-        .navlinks{
-            list-style: none;
-            display: flex; /*  Exibe horizontalmente o menu  */
-            gap: 20px;
-            margin: 0;
-            padding: 0;
-        }
+            /* Estilo de listas de links */
 
-    </style>
+            .nav-links{
+                list-style: none;
+                display: flex;/*  Exibe horizontalmente o menu  */
+                gap: 20px;
+                margin: 0px;
+                padding: 0px;
 
-</head>
-<body>
+            }
 
-    <nav class="navbar">
-        <div class="logo">Meu site</div>
+            .nav-links a {
+                color: white;
+                text-decoration: none;
+                font-size: 20px;
+            }
 
-        <!-- Botão Hamburguer para responsividade -->
-        <button class="hamburguer" id="hamburguer-btn">
-            &#9776; <!-- Símbolo do ícone de menu -->
-        </button>
+            .hamburguer{
+                display: none;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 24px;
+                cursor: pointer;
+            }
+            
+            @media screen and (max-width: 768px){
 
-        <!-- Lista de itens do menu -->
-        <ul class="nav-links" id="nav-links">
-            <li>
-                <a href="https://www.youtube.com/">Início</a>
-            </li>
+                .hamburguer{
+                    display: block;
+                }
 
-            <li>
-                <a href="https://github.com/">Sobre</a>
-            </li>
+                .nav-links{
+                    display: none;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 60px;
+                    left: 0;
+                    width: 100%;
+                    background-color: #333;
+                    text-align: center;
+                    padding: 20px 0;
+                }
 
-            <li>
-                <a href="https://www.amazon.com.br/">Serviços</a>
-            </li>
+                /* Classe que será adicionada ao javascript para mostrar */
+                .nav-links.active{
+                    display: flex;
+                }
 
-            <li>
-                <a href="https://www.google.com/aclk?sa=L&pf=1&ai=DChsSEwixqsTA1PmSAxUct1oFHQAEJOoYACICCAEQCRoCdnU&co=1&ase=2&gclid=EAIaIQobChMIsarEwNT5kgMVHLdaBR0ABCTqEAAYASAAEgJktvD_BwE&ei=XYyhae3uIqz35OUP8NKP6AQ&cid=CAASugHkaOdF851BbNVBNKdkIGfPtmgH4n9OPMMdet9xifdZznPNvGP1s5UTTobC7KI-A4dCH6C_pubJwYr9FN4U84IWDVmHx4alj1i9RZOl4okuYJg1utBl3RFC7BYmPz5pmPkXY-4AQohnhzZcmvZuMyTA8QP114sEZOVHiwe4_geKOKgYn0opNBrZPKst-uCfqiar_6BJu6o9WaI8zNlu6upL55ZZt9EYrynrpxjMSSoMJWN3D2AgxXjobW0&cce=2&category=acrcp_v1_32&sig=AOD64_0hPJIjxF4NWsvMrehkKIppRi1dxg&q&sqi=2&nis=4&adurl=https://www.aliexpress.com?src%3Dgoogle%26albch%3Dfbrnd%26acnt%3D907-325-7776%26isdl%3Dy%26aff_short_key%3DUneMJZVf%26albcp%3D22465909199%26albag%3D178972697235%26slnk%3D%26trgt%3Dkwd-14802285088%26plac%3D%26crea%3D737535531803%26netw%3Dg%26device%3Dc%26mtctp%3De%26memo1%3D%26albbt%3DGoogle_7_fbrnd%26aff_platform%3Dgoogle%26albagn%3D888888%26isSmbActive%3Dfalse%26isSmbAutoCall%3Dfalse%26needSmbHouyi%3Dfalse%26gad_source%3D1%26gad_campaignid%3D22465909199%26gbraid%3D0AAAAAD2TwoFtAiM7MjIVC6v3wG4UD1ZXa%26gclid%3DEAIaIQobChMIsarEwNT5kgMVHLdaBR0ABCTqEAAYASAAEgJktvD_BwE&ved=2ahUKEwitkbvA1PmSAxWsO7kGHXDpA00Q0Qx6BAgLEAE">Contato</a>
-            </li>
-        </ul>
-    </nav>
-    
-    <div style="padding: 20px;">
-        <h1>Conteúdo da página</h1>
-        <p>Redimensione a janela do navegador para ver o menu mudar.</p>
-    </div>
+            }
+            
 
-</body>
+        </style>
+
+    </head>
+
+    <body >
+
+        <nav class="navbar">
+            <div class="logo">Meu site</div>
+
+            <!-- Botão Hamburguer para responsividade -->
+            <button class="hamburguer" id="hamburguer-btn">
+                &#9776; <!-- Símbolo do ícone de menu -->
+            </button>
+
+            <!-- Lista de itens do menu -->
+            <ul class="nav-links" id="nav-links">
+                <li>
+                    <a href="https://www.amazon.com.br/">Início</a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com.br/">Sobre</a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com.br/">Serviços</a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/">Contato</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div style="padding: 20px;">
+            <h1>Conteúdo da página</h1>
+            <p>Redimensione a janela do navegador para ver o menu mudar.</p>
+        </div>
+        <script>
+            const hamburguerBtn = document.getElementById('hamburguer-btn');
+            const navLinks = document.getElementById('nav-links');
+
+            hamburguerBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            })
+        </script>
+   </body>
+  
 </html>
