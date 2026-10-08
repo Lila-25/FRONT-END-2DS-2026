@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade: Dashboard de Estudos</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body{
+            background-color: #121214;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        .dashbord{
+            display: flex;
+            gap: 20;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .sidebar{
+            flex: 1;
+            min-width: 250px;
+            background: linear-gradient(135deg, #ce1170, #5cd2f6);
+            border-radius: 16px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            box-shadow: 0 15px 25px #rgba(236, 72, 153, 0.3);
+        }
+
+        .main-content{
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            gap: 20;
+        }
+        
+        </style>
+</head>
+<body>
+
+    <!--Container Principal do Dashboard-->
+    <div class="dashboard">
+
+        <!--Menu Lateral-->
+        <div class="sidebar">
+            <h3>Meus Estudos</h3>
+            <div class="nav-item">Dashboard</div>
+            <div class="nav-item">Matérias</div>
+            <div class="nav-item">Simulados</div>
+        </div>
+
+        <!--Conteúdo Principal-->
+        <div class="main-content">
+
+            <!--Seção de Estatísticas-->
+            <div class="status-container">
+
+                <div class="card stat-1">
+                    <h4>Horas Estudadas</h4>
+                    <p>48h</p>
+                </div>
+
+                <div class="card stat-2">
+                    <h4>Simulados Feitos</h4>
+                    <p>12</p>
+                </div>
+
+                <div class="card stat-3">
+                    <h4>Média de Acertos</h4>
+                    <p>85%</p>
+                </div>
+            </div>
+
+
+            <!--Seção dos Blocos de Conteúdo-->
+            <div class="content-container">
+                <div class="box">
+                    <h3>Metas da Semana</h3>
+                    <p>Concluir o módulo de Flexbox e praticar CSS Grid.</p>
+                </div>
+                <div class="box">
+                    <h3>Próxima Aula</h3>
+                    <p>JavaScript Básico - Funções e Eventos.</p>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    
+</body>
+
+</html>
